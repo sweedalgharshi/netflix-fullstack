@@ -33,7 +33,7 @@ function List({ list }) {
         />
         <div className="container" ref={listRef}>
           {list.content.map((item, index) => {
-            return <ListItem index={index} item={item} />;
+            return <ListItem index={index} item={item} key={index} />;
           })}
         </div>
         <ArrowForwardIosOutlinedIcon

@@ -4,6 +4,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,9 +22,15 @@ const Navbar = () => {
             src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
             alt="netflix logo"
           />
-          <span>Homepage</span>
-          <span>Series</span>
-          <span>Movies</span>
+          <Link to="/" className="link">
+            <span>Homepage</span>
+          </Link>
+          <Link to="/series" className="link">
+            <span>Series</span>
+          </Link>
+          <Link to="/movies" className="link">
+            <span>Movies</span>
+          </Link>
           <span>New and Popular</span>
           <span>My List</span>
         </div>

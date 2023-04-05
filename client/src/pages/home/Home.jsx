@@ -5,6 +5,7 @@ import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { TOKEN } from "../../keys";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
@@ -17,8 +18,7 @@ const Home = ({ type }) => {
           `lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,
           {
             headers: {
-              token:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MjJkOThiNmIzMWFhZDZlOGFjNzk5ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDUwMjI5OSwiZXhwIjoxNjgwOTM0Mjk5fQ.BLnT_I-CD15aR_91shvJu-V0cRK3p29iOk7Wtfciiw0",
+              token: "Bearer " + TOKEN,
             },
           }
         );

@@ -90,21 +90,6 @@ router.get("/stats", async (req, res) => {
   const today = new Date();
   const lastYear = today.getFullYear(today.getFullYear() - 1);
 
-  const monthsArray = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
   try {
     const data = await User.aggregate([
       {
@@ -116,7 +101,7 @@ router.get("/stats", async (req, res) => {
         $group: {
           _id: "$month",
           total: {
-            $sum: 1,
+            $sum: { $sum: 1 },
           },
         },
       },
